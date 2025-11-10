@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import { useAuth } from '../contexts/AuthContext';
 import { auth } from '../firebase';
+import baoLogo from '../assets/BAO LOGO.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = () => {
     <nav className="bg-gray-600 shadow-lg">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold text-white"><img 
-    src="../assets/BAO LOGO.png" alt="BAO Logo" className="h-8 w-auto"  
+    src={baoLogo} alt="BAO Logo" className="h-8 w-auto"  
   /></Link>
         <div className="hidden md:flex items-center space-x-6">
           <NavLink to="/" className={({ isActive }) => isActive ? "text-secondary-light" : "text-white hover:text-secondary-light transition duration-300"}>{t('home')}</NavLink>
