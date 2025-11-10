@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'SutonnyOMJ';
+  src: url('/fonts/SutonnyOMJ.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html[lang="bn"] body {
+  font-family: 'SutonnyOMJ', sans-serif;
+}
+
+body {
+  background-color: #E0FFFF;
+  color: #141614;
+}

@@ -1,40 +1,56 @@
+import { useTranslation } from 'react-i18next';
+
 const HomePage = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
-      <header 
-        className="relative bg-cover bg-center text-white text-center py-20 md:py-40"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1580273916550-425a4b5b3592?q=80&w=2070&auto=format&fit=crop')" }}
-      >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Bangladesh Automobile Olympiad</h1>
-          <p className="text-xl mb-8">Igniting the passion for automotive excellence.</p>
-          <a href="/registration" className="bg-blue-500 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-600 transition duration-300 transform hover:scale-105">Register Now</a>
-        </div>
-      </header>
+      <header
+  className="relative bg-cover bg-center text-white text-center py-20 md:py-40"
+  style={{
+    // FIX: Replaced broken Google search link with the direct image URL.
+    // NOTE: This image is a movie poster and may not be ideal for a banner.
+    backgroundImage: "url('https://wallpapercave.com/wp/wp2739947.jpg')",
+  }}
+>
+  {/* Black overlay for better text readability */}
+  <div className="absolute inset-0 bg-black opacity-50"></div>
 
-      <section className="bg-gray-100 py-20">
+  {/* Content (z-10 ensures it appears above the overlay) */}
+  <div className="relative z-10">
+    <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-shadow-md">{t('heroTitle')}</h1>
+    <p className="text-xl mb-8 text-shadow-md">{t('heroSubtitle')}</p>
+    <a 
+      href="/registration" 
+      className="bg-secondary-light text-white font-bold py-3 px-8 rounded-full hover:bg-primary-light transition duration-300 transform hover:scale-105"
+    >
+      {t('registerNow')}
+    </a>
+  </div>
+</header>
+
+      <section className="py-20">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">The Premier Automotive Competition</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">The Bangladesh Automobile Olympiad is a national platform for students to showcase their knowledge, skills, and passion for the automotive industry. Compete with the best, learn from experts, and kickstart your career in automobiles.</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">{t('premierCompetition')}</h2>
+          <p className="text-lg text-text-primary max-w-3xl mx-auto">{t('premierCompetitionText')}</p>
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="py-20 bg-tertiary-light">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why Participate?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-text-primary">{t('whyParticipate')}</h2>
           <div className="grid md:grid-cols-3 gap-12 text-center">
-            <div className="bg-gray-100 p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-4">Showcase Your Skills</h3>
-              <p className="text-gray-600">Demonstrate your expertise in automotive engineering and technology.</p>
+            <div className="p-8 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold mb-4 text-text-primary">{t('showcaseSkills')}</h3>
+              <p className="text-text-primary">{t('showcaseSkillsText')}</p>
             </div>
-            <div className="bg-gray-100 p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-4">Win Amazing Prizes</h3>
-              <p className="text-gray-600">Compete for scholarships, internships, and other valuable prizes.</p>
+            <div className="p-8 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold mb-4 text-text-primary">{t('winPrizes')}</h3>
+              <p className="text-text-primary">{t('winPrizesText')}</p>
             </div>
-            <div className="bg-gray-100 p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-4">Network with Experts</h3>
-              <p className="text-gray-600">Connect with industry leaders, professionals, and fellow enthusiasts.</p>
+            <div className="p-8 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold mb-4 text-text-primary">{t('networkExperts')}</h3>
+              <p className="text-text-primary">{t('networkExpertsText')}</p>
             </div>
           </div>
         </div>
