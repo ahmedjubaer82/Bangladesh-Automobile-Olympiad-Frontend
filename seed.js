@@ -3,12 +3,12 @@ import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/fire
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyALyfRCJYDe8JdAQ_WHvIov1ciBJUL4XRw",
-  authDomain: "bangladesh-automobile-olympiad.firebaseapp.com",
-  projectId: "bangladesh-automobile-olympiad",
-  storageBucket: "bangladesh-automobile-olympiad.firebasestorage.app",
-  messagingSenderId: "865573056497",
-  appId: "1:865573056497:web:4559016b019a5bb7bc1e50"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID
 };
 
 // Initialize Firebase
